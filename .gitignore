@@ -11,3 +11,8 @@
 /windows.exe
 /xfs.cpp
 /xfs.txt
+mv-xfs.exe
+mv-xfs.dev
+Makefile.win
+main.o
+main.cpp
