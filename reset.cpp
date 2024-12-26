@@ -19,7 +19,7 @@ void resetATMMachine() {
     }
 
     // Open a connection to the ATM service
-    hResult = WFSOpen("ATM", WFS_DEFAULT_HAPP, "ATMApp", 0, 0, 0, &spVersion, &hService);
+    hResult = WFSOpen("ATM", WFS_DEFAULT_HAPP, "ATMApp", 0, 0, 0, 0, &spVersion, &hService);
     if (hResult != WFS_SUCCESS) {
         cerr << "Failed to open ATM service: " << hResult << endl;
         WFSCleanUp();
@@ -27,7 +27,7 @@ void resetATMMachine() {
     }
 
     // Reset the ATM machine
-    hResult = WFSAsyncExecute(hService, WFS_CMD_RESET, NULL, 0, NULL, &requestID);
+    hResult = WFSAsyncExecute(hService, WFS_ERR_ACT_RESET, NULL, 0, NULL, &requestID);
     if (hResult != WFS_SUCCESS) {
         cerr << "Failed to reset ATM machine: " << hResult << endl;
     } else {
